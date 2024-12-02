@@ -8,5 +8,6 @@
 ✔ itec-lib: utility methods: print_array, swap @done(24-12-02 13:31)
 ✔ itec-lib: sorting methods: quickSort, mergeSort @done(24-12-02 13:31)
 ✔ example Application: runtime comparison between sorting algorithms @done(24-12-02 13:31)
+✔ Update devcontainer json to add todo+ extension @done(24-12-02 15:31)
 - Add release option to `CMakeLists.txt` for itec library
 - Add release the missing examples from the itec script to the src folder 
