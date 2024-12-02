@@ -1,0 +1,43 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+
+## [Unreleased]
+
+### Added
+
+### Changed
+
+### Removed
+
+## [0.2.0] - 2024-12-02
+
+### Added
+
+- testing: cmocka testing framework to CMakeLists.txt as external res
+- testing: added tests for the itec library
+- cmake-flags: enable verbose mode for cmake
+- cmake-flags: add debug symbols for debugging
+- devcontainer: add addons for vscode develeopment
+- TODO file to track the todos of this project
+
+### Changed
+
+- Refactored the itec library and added several header files.
+
+### Removed
+
+## [0.1.0] - 2024-11-25
+
+### Added
+
+- isolated hello world executable: c-intro
+- isolated argument example executable: argument-example
+- itec-lib: utility methods: print_array, swap
+- itec-lib: sorting methods: quickSort, mergeSort
+- example Application: runtime comparison between sorting algorithms
+- CHANGELOG to track the notable changes

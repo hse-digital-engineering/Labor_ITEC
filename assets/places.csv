@@ -1,0 +1,61 @@
+Place,Rating,X-Coordinate,Y-Coordinate,Hashtags
+Eiffel Tower,4,48.8589,2.2947,#EiffelTower #Paris #Landmark #eu
+Great Pyramid of Giza,5,29.9773,31.1370,#GreatPyramid #Giza #AncientWonder #eu
+Statue of Liberty,3,40.6892,-74.0445,#StatueOfLiberty #NYC #Freedom
+Colosseum,4,41.8902,12.4922,#Colosseum #Rome #AncientRome #eu
+Tokyo Tower,3,35.6586,139.7456,#TokyoTower #Tokyo #Japan
+Chichen Itza,5,20.6843,-88.5677,#ChichenItza #Maya #WorldWonder
+Machu Picchu,4,-13.0005,-72.5417,#MachuPicchu #Peru #Inca
+Taj Mahal,5,27.1752,78.0421,#TajMahal #India #Love
+Christ the Redeemer,4,-22.9517,-43.2105,#ChristTheRedeemer #Rio #Brazil
+The White House,3,38.8977,-77.0369,#WhiteHouse #WashingtonDC #Politics #usa
+Atlantis (Mythical),2,25.7742,-80.2172,#Atlantis #Myth #LostCity 
+Skynet Headquarters (Terminator 2),1,37.3382,-122.4419,#Skynet #Terminator #SciFi
+Cloud City (Star Wars),4,-45.2723,177.6231,#CloudCity #StarWars #SciFi
+Asgard (Marvel Comics),5,60.1780,10.7890,#Asgard #Marvel #Mythology #Myth
+New New York (Futurama),3,40.7128,-74.0059,#NewNewYork #Futurama #Animated #SciFi
+Great Wall of China,4,40.4319,116.5703,#GreatWall #China #WorldWonder
+Hanging Gardens of Babylon (Mythical),3,32.5636,44.4199,#HangingGardens #Babylon #AncientWonder
+The Kremlin,4,55.7558,37.6176,#Kremlin #Moscow #Russia
+Stonehenge,3,51.1784,-1.8262,#Stonehenge #UK #Ancient #eu
+Moai Statues (Easter Island),4,-27.1142,-109.3402,#MoaiStatues #EasterIsland #Mystery
+The Forbidden City,5,40.0005,116.3683,#ForbiddenCity #Beijing #China
+Hogwarts School of Witchcraft and Wizardry (Harry Potter),4,56.8910,-4.2020,#Hogwarts #HarryPotter #Magic
+The International Space Station,4,41.6500,-143.0000,#ISS #Space #NASA #ESA
+The Grand Canyon,5,36.1146,-112.1117,#GrandCanyon #Arizona #NaturalWonder
+The Colosseum (Future, post-apocalypse),2,41.8902,12.4922,#Colosseum #PostApocalypse #Future
+Pandora (Avatar),3,-58.2037,90.6086,#Pandora #Avatar #SciFi
+Wakanda (Black Panther),5,-26.2041,28.0139,#Wakanda #BlackPanther #Marvel
+Rivendell (Lord of the Rings),4,41.1402,69.5952,#Rivendell #LOTR #Fantasy
+District 12 (The Hunger Games),2,35.5620,82.5547,#District12 #HungerGames #Dystopia
+Themyscira (Wonder Woman),4,38.0881,27.2813,#Themyscira #WonderWoman #DCComics
+Great Barrier Reef,4,-19.4772,149.4392,#GreatBarrierReef #Australia #MarineLife
+Area 51 (Mythical),2,37.2578,-115.8634,#Area51 #UFO #Mystery
+Leaning Tower of Pisa,3,43.7230,10.3969,#LeaningTower #Pisa #Italy #eu
+Loch Ness,3,57.3333,-4.4333,#LochNess #Scotland #Nessie #eu
+The Pyramids of Mars (Doctor Who),1,41.2963,-2.3515,#PyramidsOfMars #DoctorWho #SciFi
+El Dorado (Mythical City of Gold),3,-1.2167,-67.4667,#ElDorado #Myth #CityOfGold
+The Palace of Versailles,4,48.8150,2.1744,#Versailles #France #Palace
+Naboo (Star Wars),5,-60.8889,-121.3750,#Naboo #StarWars #SciFi
+The Lost City of Z (Mythical),2,-12.3456,-55.6789,#LostCityOfZ #Myth #Exploration
+The Rosetta Stone (British Museum),4,51.5190,-0.1278,#RosettaStone #History #BritishMuseum
+The Hanging Gardens of Kyoto,3,35.0117,135.7557,#HangingGardens #Kyoto #Japan
+The Empire State Building,4,40.7484,-73.9857,#EmpireStateBuilding #NYC #Landmark
+The Sydney Opera House,4,-33.8569,151.2174,#SydneyOperaHouse #Australia #Architecture
+The Acropolis,4,37.9716,23.7264,#Acropolis #Athens #AncientGreece
+The Palace of Westminster (Houses of Parliament),4,51.5007,-0.1247,#Westminster #London #Parliament
+Isle of Skye, Scotland,4,57.0881,-6.6333,#IsleOfSkye #Scotland #Nature
+Monument Valley, Utah, USA,5,37.1808,-110.0722,#MonumentValley #Utah #Nature
+Petra, Jordan,4,30.3284,35.4444,#Petra #Jordan #AncientWonder
+Bagan, Myanmar,5,21.1667,94.9167,#Bagan #Myanmar #Temples
+Uyuni Salt Flats, Bolivia,4,-20.1425,67.5072,#UyuniSaltFlats #Bolivia #Nature
+Alcatraz Island, California, USA,3,37.8275,-122.4794,#Alcatraz #California #Prison
+Christchurch Cathedral, New Zealand,4,-43.5322,172.6362,#ChristchurchCathedral #NewZealand #Cathedral
+Baalbek, Lebanon,4,34.1958,36.9103,#Baalbek #Lebanon #RomanRuins
+The Amazon Rainforest, South America,4,-3.1000,-60.0000,#AmazonRainforest #SouthAmerica #Nature
+The Great Blue Hole, Belize,4,17.3433,-87.6289,#GreatBlueHole #Belize #Diving
+Neuschwanstein Castle, Germany,4,47.5594,10.7764,#NeuschwansteinCastle #Germany #FairyTale
+The Terracotta Army, China,5,34.3516,109.0622,#TerracottaArmy #China #AncientHistory
+Machu Picchu Sanctuary, Peru,4,-13.0005,-72.5417,#MachuPicchuSanctuary #Peru #Inca
+The Roman Forum, Italy,4,41.8902,12.4833,#RomanForum #Rome #AncientRome
+The Palace of Holyroodhouse, Scotland,3,55.9532,-3.1881,#Holyroodhouse #Scotland #Royal

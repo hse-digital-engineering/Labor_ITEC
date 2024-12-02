@@ -1,0 +1,19 @@
+
+{
+    "name": "C++",
+    "image": "mcr.microsoft.com/devcontainers/cpp:1-debian-12",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "twxs.cmake",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools",
+                "mechatroner.rainbow-csv",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cpptools-themes",
+                "streetsidesoftware.code-spell-checker",
+                "streetsidesoftware.code-spell-checker-german"
+            ]
+        }
+    }
+}
