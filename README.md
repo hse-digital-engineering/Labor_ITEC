@@ -36,6 +36,8 @@ Erklärung für die Struktur:
 
 ## Compilieren und Ausführen des Projektes
 
+Klonen des Repositories:
+
 ```bash
 git clone https://github.com/hse-digital-engineering/Labor_ITEC.git
 cd Labor_ITEC
