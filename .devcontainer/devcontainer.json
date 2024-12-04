@@ -1,6 +1,6 @@
 
 {
-    "name": "C++",
+    "name": "ITEC C++",
     "image": "mcr.microsoft.com/devcontainers/cpp:1-debian-12",
     "customizations": {
         "vscode": {
