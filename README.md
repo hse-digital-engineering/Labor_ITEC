@@ -36,11 +36,76 @@ Erklärung für die Struktur:
 
 ## Compilieren und ausführen des Projektes
 
-### Auf der Kommandozeile 
+### Auf der Kommandozeile
 
-### Mit den VS-Code Plugins
+Erstelle einen Ordner für den Build-Prozess:
 
-TODO
+```bash
+mkdir build
+```
+
+Wechseln in den build Ordner:
+
+```bash
+cd build/
+```
+
+Das Projekt konfigurieren:
+
+```bash
+cmake ../
+```
+
+Das Projekt compilieren und Libraries und Executables linken
+
+```bash
+cmake --build .
+```
+
+Resultat des Build-Prozesses: 
+
+```bash
+$ ls a-hl
+drwxr-xr-x 20 vscode vscode  640 Dec  2 15:01 .
+drwxr-xr-x 15 vscode vscode  480 Dec  2 14:57 ..
+-rwxr-xr-x  1 vscode vscode  71K Dec  2 15:01 arg-ex
+-rw-r--r--  1 vscode vscode  31K Dec  2 14:57 CMakeCache.txt
+drwxr-xr-x 23 vscode vscode  736 Dec  2 15:01 CMakeFiles
+-rw-r--r--  1 vscode vscode 1.8K Dec  2 14:57 cmake_install.cmake
+-rwxr-xr-x  1 vscode vscode  71K Dec  2 15:01 CMockaExample
+-rwxr-xr-x  1 vscode vscode  71K Dec  2 15:01 code-intro-ex
+-rw-r--r--  1 vscode vscode 1.2K Dec  2 14:57 compile_commands.json
+-rw-r--r--  1 vscode vscode 3.9K Dec  2 14:57 CPackConfig.cmake
+-rw-r--r--  1 vscode vscode 4.2K Dec  2 14:57 CPackSourceConfig.cmake
+-rw-r--r--  1 vscode vscode  927 Dec  2 14:57 CTestTestfile.cmake
+drwxr-xr-x  5 vscode vscode  160 Dec  2 14:57 _deps
+-rwxr-xr-x  1 vscode vscode  73K Dec  2 15:01 itec-util-test
+-rwxr-xr-x  1 vscode vscode  73K Dec  2 15:01 libitec.so
+-rw-r--r--  1 vscode vscode  36K Dec  2 14:57 Makefile
+-rwxr-xr-x  1 vscode vscode  71K Dec  2 15:01 runtime-ex
+-rwxr-xr-x  1 vscode vscode  72K Dec  2 15:01 sort_comp_with_lib-ex
+-rwxr-xr-x  1 vscode vscode  73K Dec  2 15:01 sort-test
+drwxr-xr-x  3 vscode vscode   96 Dec  2 15:01 Testing
+```
+
+Tests ausführen:
+
+```bash
+ctest
+```
+
+Ausgabe auf der Kommandozeile:
+
+```bash
+Test project /workspaces/test-c/build
+    Start 1: CMockaExample
+1/3 Test #1: CMockaExample ....................   Passed    0.01 sec
+    Start 2: sort-test
+2/3 Test #2: sort-test ........................   Passed    0.03 sec
+    Start 3: itec-util-test
+3/3 Test #3: itec-util-test ...................   Passed    0.02 sec
+```
+
 
 ## Was ist die CMakeLists.txt
 
