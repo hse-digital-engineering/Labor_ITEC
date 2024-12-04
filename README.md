@@ -34,7 +34,24 @@ Erklärung für die Struktur:
 - `assets`: Dateien für Beispiel Executables
 - `CHANGELOG`ist die zentrale Datei in der die erwähnenswerten Veränderungen des Projektes aufgelistet werden. Mehr Details: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
-## Compilieren und ausführen des Projektes
+## Compilieren und Ausführen des Projektes
+
+Klonen des Repositories:
+
+```bash
+git clone https://github.com/hse-digital-engineering/Labor_ITEC.git
+cd Labor_ITEC
+```
+
+1. Den Ordner `Labor_ITEC` in Visual Studio Code öffnen (vscode).
+
+Das Projekt hat einen devcontainer. Wenn man den Ordner in vscode öffnet, fragt vscode, ob das Projekt im container geöffnet werden soll. 
+
+2. Das Projekt im devcontainer öffnen. 
+
+Der Devcontainer enthält alle relevanten Plugins für vscode. Unabhängig von den Plugins kann man auch das Projekt auf der Kommandozeile erstellen und compilieren.
+
+3. Öffnen eines neuen Terminals in vscode und mit dem nächsten Abschnitt fortfahren.
 
 ### Auf der Kommandozeile
 
