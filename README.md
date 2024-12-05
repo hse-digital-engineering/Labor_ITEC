@@ -2,6 +2,8 @@
 
 Der Zweck dieses Repositories ist es, ein einfaches Beispiel für einen guten Aufbau eines Projektes mit C inclusive Testing, Changelog, Bau einer eigenen Library zu demonstrieren.
 
+> Durch die CI/CD wird sichergestellt, dass das Projekt mit clang und gcc erfolgreich gebaut werden kann und die Tests erfolgreich durchlaufen.
+
 ## Struktur des Projektes
 
 ```
