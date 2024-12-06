@@ -44,6 +44,7 @@ add_library(itec SHARED
     ./src/itec-lib/itec.c
     ./src/itec-lib/quicksort.c
     ./src/itec-lib/mergesort.c
+    ./src/itec-lib/patternsearch.c
     )
 
 # Now let's use our library. 
@@ -52,6 +53,10 @@ add_executable(sort_comp_with_lib-ex  ./src/sort-comp-main.c)
 # Next, the new library target is linked to the executable target using 
 # target_link_libraries().
 target_link_libraries(sort_comp_with_lib-ex PUBLIC itec)
+
+
+add_executable(text-suche_with_lib-ex ./src/text-suche-example.c)
+target_link_libraries(text-suche_with_lib-ex PUBLIC itec)
 
 
 # -----------------------------------
@@ -70,7 +75,12 @@ target_link_libraries(sort-test PRIVATE cmocka itec)
 add_executable(itec-util-test test/sort-test-main.c)
 target_link_libraries(itec-util-test PRIVATE cmocka itec)
 
+add_executable(itec-pattern-test test/pattern-search-text-main.c)
+target_link_libraries(itec-pattern-test PRIVATE cmocka itec)
+
+
 enable_testing()
 add_test(NAME CMockaExample COMMAND CMockaExample)
 add_test(NAME sort-test COMMAND sort-test)
 add_test(NAME itec-util-test COMMAND itec-util-test)
+add_test(NAME itec-pattern-test COMMAND itec-pattern-test)
