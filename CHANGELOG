@@ -10,7 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Update devcontainer json to add todo+ extension 
+- Update devcontainer json to add todo+, error lense extension 
+- add root as devcontainer user, due to default write permissions
 
 ### Changed
 
