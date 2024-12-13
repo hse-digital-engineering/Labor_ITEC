@@ -5,10 +5,10 @@
 void pattern_search_all(char* pattern, char* text, int* bitmap) {
     int M = strlen(pattern);
     int N = strlen(text);
-    
-    for (int i_txt = 0; i_txt <= N - M; i_txt++) {
 
-        bitmap[i_txt] = 0; 
+    memset(bitmap, 0, N);
+
+    for (int i_txt = 0; i_txt <= N - M; i_txt++) {
 
         int j_pat = 0;
 
@@ -27,6 +27,10 @@ void pattern_search_all(char* pattern, char* text, int* bitmap) {
 int pattern_search(char* pattern, char* text) {
     int M = strlen(pattern);
     int N = strlen(text);
+
+    if(N == 0 || M == 0 ){
+        return -1;
+    }
     
     for (int i_txt = 0; i_txt <= N - M; i_txt++) {
 
