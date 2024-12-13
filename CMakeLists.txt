@@ -45,6 +45,7 @@ add_library(itec SHARED
     ./src/itec-lib/quicksort.c
     ./src/itec-lib/mergesort.c
     ./src/itec-lib/patternsearch.c
+    ./src/itec-lib/editdistance.c
     )
 
 # Now let's use our library. 
@@ -58,6 +59,9 @@ target_link_libraries(sort_comp_with_lib-ex PUBLIC itec)
 add_executable(text-suche_with_lib-ex ./src/text-suche-example.c)
 target_link_libraries(text-suche_with_lib-ex PUBLIC itec)
 
+
+add_executable(spellchecker-ex ./src/spellchecker-example.c)
+target_link_libraries(spellchecker-ex PUBLIC itec)
 
 # -----------------------------------
 # Include Unit Testing
@@ -78,9 +82,12 @@ target_link_libraries(itec-util-test PRIVATE cmocka itec)
 add_executable(itec-pattern-test test/pattern-search-text-main.c)
 target_link_libraries(itec-pattern-test PRIVATE cmocka itec)
 
+add_executable(itec-editdistance-test test/editdistance-test.c)
+target_link_libraries(itec-editdistance-test PRIVATE cmocka itec)
 
 enable_testing()
 add_test(NAME CMockaExample COMMAND CMockaExample)
 add_test(NAME sort-test COMMAND sort-test)
 add_test(NAME itec-util-test COMMAND itec-util-test)
 add_test(NAME itec-pattern-test COMMAND itec-pattern-test)
+add_test(NAME itec-editdistance-test COMMAND itec-editdistance-test)
