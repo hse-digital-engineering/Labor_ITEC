@@ -45,9 +45,9 @@ git clone https://github.com/hse-digital-engineering/Labor_ITEC.git
 cd Labor_ITEC
 ```
 
-1. Den Ordner `Labor_ITEC` in Visual Studio Code öffnen (vscode).
+1. Den Ordner `Labor_ITEC` in [Visual Studio Code](https://code.visualstudio.com) öffnen (vscode).
 
-Das Projekt hat einen devcontainer. Wenn man den Ordner in vscode öffnet, fragt vscode, ob das Projekt im container geöffnet werden soll. 
+Das Projekt hat einen [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers). Wenn man den Ordner in vscode öffnet, fragt vscode, ob das Projekt im container geöffnet werden soll. 
 
 2. Das Projekt im devcontainer öffnen. 
 
