@@ -4,7 +4,10 @@
 #include <cmocka.h>
 
 #include <string.h>
-#include <malloc.h>
+#include <stdlib.h>
+//#include <malloc.h>
+#include <stdio.h>
+
 #include "itec-lib/patternsearch.h"
 
     
@@ -41,10 +44,10 @@ static void test_pattern_search_all_empty_pattern(void **state)
 
     int refbitmap[59] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-    int *bitmap; //typ :int *
+    //typ :int *
 
-    int text_length = strlen(text);
-    bitmap = malloc(text_length * sizeof(int)); //dynamische speicher alloc auf dem heap muss wieder freigegeben werden
+    const int text_length = strlen(text);
+    int *bitmap = malloc(text_length * sizeof(int)); //dynamische speicher alloc auf dem heap muss wieder freigegeben werden
     
     assert_non_null(bitmap);
 
@@ -52,6 +55,7 @@ static void test_pattern_search_all_empty_pattern(void **state)
 
     for (size_t i = 0; i < text_length; i++)
     {
+        printf("index: %i - %i <-> %i)\n", i, bitmap[i], refbitmap[i]);
         assert_int_equal(bitmap[i],refbitmap[i]);
     }
 
