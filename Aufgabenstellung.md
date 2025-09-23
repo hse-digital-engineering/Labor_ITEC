@@ -6,7 +6,7 @@ Für die Entwicklung ist schon eine Hardware vrohanden. Diese bietet verschieden
 
 ## Beschreibung Hardware:
 
-Die Blackbox ist ein Gehäuse in dem ein µ Controller Signale von einem Ultraschall Sensor erfasst diese verarbeitet und über die USB Schnittstelle ausgibt.
+Die Blackbox ist ein Gehäuse in dem ein µ Controller Signale von einem Ultraschall Sensor (US-Sensor) erfasst diese verarbeitet und über die USB Schnittstelle ausgibt.
 Die gesendeten Daten sind im INT Format und werden mit einer Frequenz von 1Hz ausgegeben
 Die Spannungsversorgung erfolgt auch über den USB Anschluss (5V/0,500mA).
 
@@ -32,12 +32,17 @@ int main(){
 ### 1. Plausbilität der eingelesen Werte
 
 Ziel: 
+- Ziel ist es ein C Programm zu entwicklen, das den Sensorwert aus der Blackbox auf Tastendruck ausliest und in eine csv-Datei speichert. 
+- Das Programm soll einen Kalibrierungsmodus haben. 
+- In diesem Modus soll der reale Abstandswert auf der Kommandozeile eingegeben werden und mit Enter bestätigt werden. Der reale Abstandswert soll ebenfalls in der csv-Datei gespeiochert werden.
+- Der Modus kann über die CLI ausgewählt werden (Einzelmessung, Kalibirierung)
+- Anhand der händisch erstellten Tabelle eine Look-Up Tabelle programieren, die als Input die aufgenommene csv-Datei hat. So ist es möglich durch den Tausch der csv-Datei einen anderen Wertebereich festzulegen.
+- Zwischen den Datenpunkten aus der Look-Up Tabelle soll linear interpoliert werden, um aus dem Sensorwert den korrekten Abstand zu berechnen.
 
-TODO: Ziel formulieren
+TODO: überarbeien
+Breakdown Kalibrieren:
 
-Breakdown:
-
-   - US Sensor in einer festen Position zu einem Objekt abstellen
+   - US-Sensor in einer festen Position zu einem Objekt abstellen
    - Mit einem Lineal den Abstand Sensor Objekt messen
    - Eingelesenen Wert konvertieren und den Wert als Meter anzeigen (Faktor!)
    - Auf einem Blatt Papier eine Tabelle für 20 Abstands Messungen erstellen.
