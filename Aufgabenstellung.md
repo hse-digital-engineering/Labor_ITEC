@@ -26,18 +26,21 @@ int main(){
 
 - Die Laboraufgaben werden einzeln abgenommen.
 - Der Code wie auch die erzeugten Visualisierungen müssen erklärt werden.
+- Der Code muss sauber mit Methoden, structs und unterschiedlichen .h und .c Dateien strukturiert sein. (vgl. Vorlesungsprojekt)
 
 ## Aufgaben
 
 ### 1. Plausbilität der eingelesen Werte
 
 Ziel: 
+
 - Ziel ist es ein C Programm zu entwicklen, das den Sensorwert aus der Blackbox auf Tastendruck ausliest und in eine csv-Datei speichert. 
 - Das Programm soll einen Kalibrierungsmodus haben. 
 - In diesem Modus soll der reale Abstandswert auf der Kommandozeile eingegeben werden und mit Enter bestätigt werden. Der reale Abstandswert soll ebenfalls in der csv-Datei gespeiochert werden.
 - Der Modus kann über die CLI ausgewählt werden (Einzelmessung, Kalibirierung)
 - Anhand der händisch erstellten Tabelle eine Look-Up Tabelle programieren, die als Input die aufgenommene csv-Datei hat. So ist es möglich durch den Tausch der csv-Datei einen anderen Wertebereich festzulegen.
 - Zwischen den Datenpunkten aus der Look-Up Tabelle soll linear interpoliert werden, um aus dem Sensorwert den korrekten Abstand zu berechnen.
+- Die Visualisierung der Soll-Ist-Abweichung soll in Excel durch den Import der csv-Datei erfolgen.
 
 TODO: überarbeien
 Breakdown Kalibrieren:
@@ -53,11 +56,9 @@ Breakdown Kalibrieren:
    - Durch Messungen die Plausbilität überprüfen (3-5 Messungen)
    - Die Ergebnisse in einer Excel Tabelle "Messung Nr. 1" speichern
 
-TODO: Was erzeugt das C Programm und wo kommt die Visualizierung her?
- - C Programm - csv abspeichern
- - Aufnahme der Messwerte muss manuell ausgeloest werden
 
 ### 2. Automatisch messen
+
    - für ca. 10 Sekunden eine/n Messung/Bewegungsablauf starten
    - Zeitstempel der erfassten Werte und die Werte in einer .csv Tabelle "Messung Nr. 2" speichern
    - Visualisieren der Höhenkarte anhand der Zeitstempel
@@ -69,15 +70,23 @@ TODO: Was erzeugt das C Programm und wo kommt die Visualizierung her?
 
 
 ### 3. Daten Filtern
+
    - Filter Sie die eingelesenen Werte.
    - Programieren Sie ein Mittelwert Filter über 3 Werte  z.B. u(m)=(SUMME( y(m-1):y(m+1))/3
    - Ploten Sie beide Werte Reihen in einem Diagramm und die dazugehörige Differenz zwichen den beiden Wertereihen
      in einem neuem Diagramm
 
-### 4. Sound und Visualisierung der Höhenkarte
+### 4. Fun: Make it a game
+
+TODO:
+
+- ASCII Art level durch höhenkarte
+- U-Boot mit W - up, S - down gesteuert
+- von links nach rechts fährt das Uboot automatisch
+- Bei kollisiotn mit der Höhe ...
+
   - Geben Sie über die Lautsprechen des PC's ein Sound aus abhängig vom gemessenen Abstand
   - 20 cm = 1kHz  1cm = 50Hz
-
-Optionen:
   - Das C Programm gibt eine Höhenkarte als Bild aus.
-  - Das C Programm gibt auf der Kommandozeile interaktive die Höhenkarte aus.
+  - Das C Programm gibt auf der Kommandozeile interaktive die Höhenkarte aus (ascii-art, ascii-style)
+  - 
