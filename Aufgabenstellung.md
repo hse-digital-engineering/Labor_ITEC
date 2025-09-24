@@ -12,11 +12,56 @@ Die Spannungsversorgung erfolgt auch über den USB Anschluss (5V/0,500mA).
 
 TODO: Beschreibung der Ansteuerung (Win und Linux)
 
-```c
-int main(){
-    return 1;
+'''
+ Windows System 
+// cp++ Programmzum auslesen eines USP Port's 
+#include <windows.h>
+#include <iostream>
+#include <stdlib.h>
+
+int main() {
+    HANDLE hSerial;
+    LPCSTR portName = "\\\\.\\COMX"; // Ersetze COMX durch deinen Port (z. B. COM1, COM4)
+
+    hSerial = CreateFile(portName,
+        GENERIC_READ,
+        0,
+        NULL,
+        OPEN_EXISTING,
+        0,
+        NULL);
+........
+
+    dcbSerialParams.BaudRate = CBR_115200;   
+    dcbSerialParams.ByteSize = 8;
+    dcbSerialParams.StopBits = ONESTOPBIT;
+    dcbSerialParams.Parity = NOPARITY;
+.........
 }
-```
+
+LinuxSystem 
+
+
+// usb: USB0 Baud; Rate  115200
+
+// mit "cat /dev/ttyUSB0" kan der Port Testweise gelesen werden.
+
+#include <iostream>
+#include <fcntl.h>
+#include <termios.h>
+#include <unistd.h>
+#include <cstring>
+
+int main() {
+    const char* port = "/dev/ttyUSB0";  // Port Nr.
+    int serial_port = open(port, O_RDWR);
+
+   .........
+}
+
+
+'''
+
 
 ## Rahmenbedinung
 
