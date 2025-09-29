@@ -6,13 +6,15 @@ Für die Entwicklung ist schon eine Hardware vrohanden. Diese bietet verschieden
 
 ## Beschreibung Hardware:
 
+![Ultraschal Sensor](../Labor_ITEC/Aufgabenstellung_Bilder/b1_US_Sensor.png)
+
 Die Blackbox ist ein Gehäuse in dem ein µ Controller Signale von einem Ultraschall Sensor (US-Sensor) erfasst diese verarbeitet und über die USB Schnittstelle ausgibt.
 Die gesendeten Daten sind im INT Format und werden mit einer Frequenz von 1Hz ausgegeben
 Die Spannungsversorgung erfolgt auch über den USB Anschluss (5V/0,500mA).
 
 TODO: Beschreibung der Ansteuerung (Win und Linux)
 
-'''
+```C
  Windows System 
 // cp++ Programmzum auslesen eines USP Port's 
 #include <windows.h>
@@ -38,10 +40,14 @@ int main() {
     dcbSerialParams.Parity = NOPARITY;
 .........
 }
+```
+
+
+
 
 LinuxSystem 
 
-
+```C
 // usb: USB0 Baud; Rate  115200
 
 // mit "cat /dev/ttyUSB0" kan der Port Testweise gelesen werden.
@@ -60,7 +66,7 @@ int main() {
 }
 
 
-'''
+```
 
 
 ## Rahmenbedinung
