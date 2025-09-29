@@ -6,7 +6,7 @@ Für die Entwicklung ist schon eine Hardware vrohanden. Diese bietet verschieden
 
 ## Beschreibung Hardware:
 
-![Ultraschal Sensor](../Labor_ITEC/Aufgabenstellung_Bilder/b1_US_Sensor.png)
+![Ultraschal Sensor](../Labor_ITEC/Aufgabenstellung_Bilder/b1_US_Sensor_a.jpg){width=300}
 
 Die Blackbox ist ein Gehäuse in dem ein µ Controller Signale von einem Ultraschall Sensor (US-Sensor) erfasst diese verarbeitet und über die USB Schnittstelle ausgibt.
 Die gesendeten Daten sind im INT Format und werden mit einer Frequenz von 1Hz ausgegeben
