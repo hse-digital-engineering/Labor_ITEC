@@ -13,14 +13,10 @@ Für die Entwicklung ist schon eine Hardware vrohanden. Diese bietet verschieden
 -->
 ---
 
-![Ultraschal Sensor](../Labor_ITEC/Aufgabenstellung_Bilder/b1_US_Sensor_a.jpg)
+![Ultraschal Sensor](Aufgabenstellung_Bilder/b1_US_Sensor_a.jpg){width="50%" fig-align="center"}
 
 
----
 
-![dfrgdrsg](Aufgabenstellung_Bilder/b1_US_Sensor.png)
-
----
 
 
 
