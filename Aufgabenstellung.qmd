@@ -44,10 +44,8 @@ Die Spannungsversorgung erfolgt auch über den USB Anschluss (5V/0,500mA).
 
 
 
-Auslesen der empfangenen Daten im Windows Betriebs-System 
 
-Serielle Port Schnittstelle definieren.
-(USB = Universal Serial Bus.)
+
 
 *********************************************************************************************************
 [//]:<> (
@@ -58,29 +56,26 @@ Hier ist eine grundlegende Anleitung, wie du in C unter Windows Daten von einem 
 
 ---
 
-## ✅ Voraussetzungen
+##  Auslesen der empfangenen Daten im Windows Betriebs-System 
 
-1. **Dein USB-Gerät muss sich als COM-Port anmelden.**
+1. **Serielle Port Schnittstelle definieren.(USB = Universal Serial Bus.)**
 
    * Überprüfe das in der Windows-Geräteverwaltung unter „Anschlüsse (COM & LPT)“.
-   * Beispiel: *"USB Serial Port (COM3)"*
+   * Beispiel: *"USB Serial Port (COM5)"*
 
-2. **Du benötigst ein installiertes C-Compiler-Toolset**, z. B.:
-
-   * [MinGW](https://sourceforge.net/projects/mingw/)
-   * Visual Studio (mit C/C++ Unterstützung)
+2. **Du benötigst ein C-Compiler-Toolset**,  z.B. Visual Studio 
 
 ---
 
-## 📄 Schritt-für-Schritt-Anleitung
+## Schritt-für-Schritt-Anleitung
 
-### 🔹 1. COM-Port herausfinden
+### 1. COM-Port herausfinden
 
-Öffne den Geräte-Manager und suche unter **"Anschlüsse (COM & LPT)"** nach deinem Gerät, z. B. **COM3**.
+Öffne den Geräte-Manager und suche unter **"Anschlüsse (COM & LPT)"** nach deinem Gerät, z. B. **COM5**.
 
 ---
 
-### 🔹 2. C-Code zum Auslesen eines COM-Ports
+### 2. C-Code zum Auslesen eines COM-Ports
 
 Speichere folgenden C-Code in eine Datei, z. B. `read_com_port.c`:
 
@@ -92,7 +87,7 @@ int main() {
     HANDLE hSerial;
     DCB dcbSerialParams = {0};
     COMMTIMEOUTS timeouts = {0};
-    char portName[] = "\\\\.\\COM3";  // Ändere COM3 auf deinen tatsächlichen Port
+    char portName[] = "\\\\.\\COMX";  // Ändere X auf die Port Nr.
     char buffer[1024];
     DWORD bytesRead;
 
@@ -111,7 +106,7 @@ int main() {
         return 1;
     }
 
-    dcbSerialParams.BaudRate = CBR_9600;    // Baudrate ggf. anpassen
+    dcbSerialParams.BaudRate = CBR_Y;    // Baudrate ggf. anpassen z.B. Y= 115200
     dcbSerialParams.ByteSize = 8;
     dcbSerialParams.StopBits = ONESTOPBIT;
     dcbSerialParams.Parity   = NOPARITY;
@@ -134,7 +129,7 @@ int main() {
     }
 
     // Datei zum Speichern öffnen
-    FILE *outFile = fopen("usb_output.txt", "w");
+    FILE *outFile = fopen("daten.txt", "w");
     if (!outFile) {
         fprintf(stderr, "Konnte Ausgabedatei nicht öffnen\n");
         CloseHandle(hSerial);
@@ -165,7 +160,7 @@ int main() {
 
 ---
 
-### 🔹 3. Kompilieren
+###  3. Kompilieren
 
 Öffne die Eingabeaufforderung und kompiliere mit z. B.:
 
@@ -177,13 +172,13 @@ gcc read_com_port.c -o read_com_port.exe
 
 ---
 
-### 🔹 4. Ausführen
+### 4. Ausführen
 
 ```bash
 read_com_port.exe
 ```
 
-Wenn dein USB-Gerät Daten sendet, siehst du sie auf der Konsole und sie werden in `usb_output.txt` gespeichert.
+Wenn dein USB-Gerät Daten sendet, siehst du sie auf der Konsole und sie werden in `daten.txt` gespeichert.
 
 
 )
@@ -261,9 +256,42 @@ int main() {
 
 Ziel: 
 
-- Ziel ist es ein C Programm zu entwicklen, das den Sensorwert aus der Blackbox auf Tastendruck ausliest und in eine csv-Datei speichert. 
+- Ziel ist es ein C Programm zu entwicklen, das den Sensorwert aus der Blackbox auf Tastendruck (von der PC Tastatur) ausliest und in eine csv-Datei speichert. 
 - Das Programm soll einen Kalibrierungsmodus haben. 
-- In diesem Modus soll der reale Abstandswert auf der Kommandozeile eingegeben werden und mit Enter bestätigt werden. Der reale Abstandswert soll ebenfalls in der csv-Datei gespeiochert werden.
+- In diesem Modus soll der reale Abstandswert auf der Kommandozeile eingegeben werden und mit Enter bestätigt werden. Der reale Abstandswert soll ebenfalls in der csv-Datei gespeichert werden.
+
+| Messung Nr.  |ABSTAND	 |   |
+|---|---|---|---|---|
+|   |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
+
+| Messung Nr. |	ABSTAND	|
+| reeler Wert	|Sensor Wert|
+| über Tastatureingabe |	über USB eingelesen
+|--------------------|:-------------- | ---------:|:-----|
+|1		
+|2		
+|3		
+4		
+5		
+6		
+7		
+8		
+9		
+10		
+11		
+12		
+13		
+14		
+15		
+16		
+17		
+18		
+19		
+20		
+
 - Der Modus kann über die CLI ausgewählt werden (Einzelmessung, Kalibirierung)
 - Anhand der händisch erstellten Tabelle eine Look-Up Tabelle programieren, die als Input die aufgenommene csv-Datei hat. So ist es möglich durch den Tausch der csv-Datei einen anderen Wertebereich festzulegen.
 - Zwischen den Datenpunkten aus der Look-Up Tabelle soll linear interpoliert werden, um aus dem Sensorwert den korrekten Abstand zu berechnen.
