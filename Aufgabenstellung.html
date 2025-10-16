@@ -83,9 +83,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="laboraufgabe" class="level1">
 <h1>Laboraufgabe</h1>
 <p>Es soll eine Höhenmesser entwicklet werden, der ein Höhenprofil aufnehmen kann. Dazu wird in diesem Labor die Informatik-Komponente entwickelt.</p>
-<p>Für die Entwicklung ist schon eine Hardware vrohanden. Diese bietet verschiedene Grundfunktionen an, die anhand der Aufgaben erweitert werden sollen.</p>
-<section id="beschreibung-hardware" class="level2">
-<h2 class="anchored" data-anchor-id="beschreibung-hardware">Beschreibung Hardware:</h2>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aufgabenstellung_Bilder/b5_Handskitze_klein.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Handskitze</figcaption>
+</figure>
+</div>
+<hr>
+<p>Für die Entwicklung ist schon eine Hardware-Aufbau vorhanden. Diese bietet verschiedene Grundfunktionen an, die anhand der Aufgaben erweitert werden sollen.</p>
+<section id="beschreibung-hardware-blackbox" class="level2">
+<h2 class="anchored" data-anchor-id="beschreibung-hardware-blackbox">Beschreibung Hardware-Blackbox:</h2>
 <!--
 ![KI stellt diverse Herausforderungen an eine Datenstrategie[^fn6]](https://www.ihk-muenchen.de/ihk/Digitalisierung/KI-Webinarreihe-2020/Webinar-5-Datenstrategie.pdf){#fig-ki-herausf fig-align="center" width="80%"}
 
@@ -94,14 +102,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Aufgabenstellung_Bilder/b1_US_Sensor_a.jpg" class="img-fluid figure-img" style="width:50000.0%"></p>
+<p><img src="Aufgabenstellung_Bilder/b1_US_Sensor_a.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption>Ultraschal Sensor</figcaption>
 </figure>
 </div>
+<hr>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="Aufgabenstellung_Bilder/b3_Controller_Vorderseite.jpg" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>µController Vorderseite</figcaption>
+</figure>
+</div>
+<hr>
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="Aufgabenstellung_Bilder/b2_Controller_R%C3%BCckseite.jpg" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>µController Vorderseite</figcaption>
+</figure>
+</div>
+<hr>
 <p>Die Blackbox ist ein Gehäuse in dem ein µ Controller Signale von einem Ultraschall Sensor (US-Sensor) erfasst diese verarbeitet und über die USB Schnittstelle ausgibt. Die gesendeten Daten sind im INT Format und werden mit einer Frequenz von 1Hz ausgegeben Die Spannungsversorgung erfolgt auch über den USB Anschluss (5V/0,500mA).</p>
-<p>TODO: Beschreibung der Ansteuerung (Win und Linux)</p>
+<p>Auslesen der empfangenen Daten im Windows Betriebs-System</p>
+<p>Serielle Port Schnittstelle definieren. (USB = Universal Serial Bus.)</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> Windows System </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">// cp++ Programmzum auslesen eines USP Port's </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">//Programm zum auslesen eines USB Port's </span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;windows.h&gt;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></span>
@@ -125,10 +149,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    dcbSerialParams<span class="op">.</span>Parity <span class="op">=</span> NOPARITY<span class="op">;</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="op">.........</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>LinuxSystem</p>
+<p>LinuxS ystem</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// usb: USB0 Baud; Rate  115200</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">// mit "cat /dev/ttyUSB0" kan der Port Testweise gelesen werden.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">// mit "cat /dev/ttyUSB0" kann der Port Testweise gelesen werden.</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;fcntl.h&gt;</span></span>

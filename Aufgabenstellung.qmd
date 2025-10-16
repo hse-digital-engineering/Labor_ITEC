@@ -2,9 +2,16 @@
 
 Es soll eine Höhenmesser entwicklet werden, der ein Höhenprofil aufnehmen kann. Dazu wird in diesem Labor die Informatik-Komponente entwickelt.
 
-Für die Entwicklung ist schon eine Hardware vrohanden. Diese bietet verschiedene Grundfunktionen an, die anhand der Aufgaben erweitert werden sollen.
 
-## Beschreibung Hardware:
+---
+
+![Handskitze](Aufgabenstellung_Bilder/b5_Handskitze_klein.jpg){width="80%" fig-align="center"}
+
+---
+
+Für die Entwicklung ist schon eine Hardware-Aufbau vorhanden. Diese bietet verschiedene Grundfunktionen an, die anhand der Aufgaben erweitert werden sollen.
+
+## Beschreibung Hardware-Blackbox:
 
 <!--
 ![KI stellt diverse Herausforderungen an eine Datenstrategie[^fn6]](https://www.ihk-muenchen.de/ihk/Digitalisierung/KI-Webinarreihe-2020/Webinar-5-Datenstrategie.pdf){#fig-ki-herausf fig-align="center" width="80%"}
@@ -15,20 +22,177 @@ Für die Entwicklung ist schon eine Hardware vrohanden. Diese bietet verschieden
 
 ![Ultraschal Sensor](Aufgabenstellung_Bilder/b1_US_Sensor_a.jpg){width="50%" fig-align="center"}
 
+---
 
 
+![µController Vorderseite](Aufgabenstellung_Bilder/b3_Controller_Vorderseite.jpg){width="30%" fig-align="left"}
 
+---
+
+
+![µController Vorderseite](Aufgabenstellung_Bilder/b2_Controller_R%C3%BCckseite.jpg){width="30%" fig-align="right"}
+
+---
 
 
 Die Blackbox ist ein Gehäuse in dem ein µ Controller Signale von einem Ultraschall Sensor (US-Sensor) erfasst diese verarbeitet und über die USB Schnittstelle ausgibt.
 Die gesendeten Daten sind im INT Format und werden mit einer Frequenz von 1Hz ausgegeben
 Die Spannungsversorgung erfolgt auch über den USB Anschluss (5V/0,500mA).
 
-TODO: Beschreibung der Ansteuerung (Win und Linux)
+
+[//]:<> (TODO: Beschreibung der Ansteuerung (Win und Linux))
+
+
+
+Auslesen der empfangenen Daten im Windows Betriebs-System 
+
+Serielle Port Schnittstelle definieren.
+(USB = Universal Serial Bus.)
+
+*********************************************************************************************************
+[//]:<> (
+
+---
+
+Hier ist eine grundlegende Anleitung, wie du in C unter Windows Daten von einem USB-Port auslesen und speichern kannst. Dabei gehen wir davon aus, dass es sich um ein USB-Gerät handelt, das sich als serielles Gerät (z. B. ein USB-zu-Seriell-Konverter wie ein Arduino oder ähnliches) am System anmeldet – das ist der gängigste und einfachste Fall.
+
+---
+
+## ✅ Voraussetzungen
+
+1. **Dein USB-Gerät muss sich als COM-Port anmelden.**
+
+   * Überprüfe das in der Windows-Geräteverwaltung unter „Anschlüsse (COM & LPT)“.
+   * Beispiel: *"USB Serial Port (COM3)"*
+
+2. **Du benötigst ein installiertes C-Compiler-Toolset**, z. B.:
+
+   * [MinGW](https://sourceforge.net/projects/mingw/)
+   * Visual Studio (mit C/C++ Unterstützung)
+
+---
+
+## 📄 Schritt-für-Schritt-Anleitung
+
+### 🔹 1. COM-Port herausfinden
+
+Öffne den Geräte-Manager und suche unter **"Anschlüsse (COM & LPT)"** nach deinem Gerät, z. B. **COM3**.
+
+---
+
+### 🔹 2. C-Code zum Auslesen eines COM-Ports
+
+Speichere folgenden C-Code in eine Datei, z. B. `read_com_port.c`:
+
+```c
+#include <windows.h>
+#include <stdio.h>
+
+int main() {
+    HANDLE hSerial;
+    DCB dcbSerialParams = {0};
+    COMMTIMEOUTS timeouts = {0};
+    char portName[] = "\\\\.\\COM3";  // Ändere COM3 auf deinen tatsächlichen Port
+    char buffer[1024];
+    DWORD bytesRead;
+
+    // COM-Port öffnen
+    hSerial = CreateFileA(portName, GENERIC_READ, 0, NULL, OPEN_EXISTING, 0, NULL);
+    if (hSerial == INVALID_HANDLE_VALUE) {
+        fprintf(stderr, "Fehler beim Öffnen des Ports %s\n", portName);
+        return 1;
+    }
+
+    // Serielle Einstellungen
+    dcbSerialParams.DCBlength = sizeof(dcbSerialParams);
+    if (!GetCommState(hSerial, &dcbSerialParams)) {
+        fprintf(stderr, "Fehler beim Lesen der Port-Einstellungen\n");
+        CloseHandle(hSerial);
+        return 1;
+    }
+
+    dcbSerialParams.BaudRate = CBR_9600;    // Baudrate ggf. anpassen
+    dcbSerialParams.ByteSize = 8;
+    dcbSerialParams.StopBits = ONESTOPBIT;
+    dcbSerialParams.Parity   = NOPARITY;
+
+    if (!SetCommState(hSerial, &dcbSerialParams)) {
+        fprintf(stderr, "Fehler beim Setzen der Port-Einstellungen\n");
+        CloseHandle(hSerial);
+        return 1;
+    }
+
+    // Timeout-Einstellungen
+    timeouts.ReadIntervalTimeout = 50;
+    timeouts.ReadTotalTimeoutConstant = 50;
+    timeouts.ReadTotalTimeoutMultiplier = 10;
+
+    if (!SetCommTimeouts(hSerial, &timeouts)) {
+        fprintf(stderr, "Fehler beim Setzen der Timeouts\n");
+        CloseHandle(hSerial);
+        return 1;
+    }
+
+    // Datei zum Speichern öffnen
+    FILE *outFile = fopen("usb_output.txt", "w");
+    if (!outFile) {
+        fprintf(stderr, "Konnte Ausgabedatei nicht öffnen\n");
+        CloseHandle(hSerial);
+        return 1;
+    }
+
+    printf("Lese vom USB-Gerät...\n");
+
+    while (1) {
+        if (ReadFile(hSerial, buffer, sizeof(buffer) - 1, &bytesRead, NULL)) {
+            if (bytesRead > 0) {
+                buffer[bytesRead] = '\0';  // Null-terminieren
+                printf("%s", buffer);      // Ausgabe auf Konsole
+                fprintf(outFile, "%s", buffer); // Schreiben in Datei
+                fflush(outFile);           // Sicherstellen, dass sofort geschrieben wird
+            }
+        } else {
+            fprintf(stderr, "Fehler beim Lesen vom COM-Port\n");
+            break;
+        }
+    }
+
+    fclose(outFile);
+    CloseHandle(hSerial);
+    return 0;
+}
+```
+
+---
+
+### 🔹 3. Kompilieren
+
+Öffne die Eingabeaufforderung und kompiliere mit z. B.:
+
+```bash
+gcc read_com_port.c -o read_com_port.exe
+```
+
+(Erfordert, dass `gcc` installiert und in der PATH-Variable ist.)
+
+---
+
+### 🔹 4. Ausführen
+
+```bash
+read_com_port.exe
+```
+
+Wenn dein USB-Gerät Daten sendet, siehst du sie auf der Konsole und sie werden in `usb_output.txt` gespeichert.
+
+
+)
+
+***************************************************
 
 ```C
  Windows System 
-// cp++ Programmzum auslesen eines USP Port's 
+//Programm zum auslesen eines USB Port's 
 #include <windows.h>
 #include <iostream>
 #include <stdlib.h>
@@ -57,12 +221,12 @@ int main() {
 
 
 
-LinuxSystem 
+LinuxS ystem 
 
 ```C
 // usb: USB0 Baud; Rate  115200
 
-// mit "cat /dev/ttyUSB0" kan der Port Testweise gelesen werden.
+// mit "cat /dev/ttyUSB0" kann der Port Testweise gelesen werden.
 
 #include <iostream>
 #include <fcntl.h>
