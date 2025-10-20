@@ -25,8 +25,9 @@ Für die Entwicklung ist schon eine Hardware-Aufbau vorhanden. Diese bietet vers
 ---
 
 
-![µController Vorderseite](Aufgabenstellung_Bilder/b3_Controller_Vorderseite.jpg){width="30%" fig-align="left"}
-![µController Rückseite](Aufgabenstellung_Bilder/b2_Controller_R%C3%BCckseite.jpg){width="30%" fig-align="right"}
+![µController Vorderseite](Aufgabenstellung_Bilder/b3_Controller_Vorderseite.jpg){width="30%" fig-align=".left"}
+
+![µController Rückseite](Aufgabenstellung_Bilder/b2_Controller_R%C3%BCckseite.jpg){width="30%" fig-align=".right"}
 
 
 
