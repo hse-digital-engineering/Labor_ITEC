@@ -18,16 +18,23 @@ Für die Entwicklung ist schon eine Hardware-Aufbau vorhanden. Diese bietet vers
 
 [^fn6]: [@Dr.HendrikBrakemeier.2020]
 -->
+
+:::{.panel-tabset}
+
+
+
+::: {#fig-zwei-bilder layout-ncol="3"}
+![Ultraschal Sensor](Aufgabenstellung_Bilder/b1_US_Sensor_a.jpg)
+
+![µController Vorderseite](Aufgabenstellung_Bilder/b3_Controller_Vorderseite.jpg)
+
+
+![µController Rückseite](Aufgabenstellung_Bilder/b2_Controller_R%C3%BCckseite.jpg)
+
+Komponenten der Black-Box.
+:::
+
 ---
-
-![Ultraschal Sensor](Aufgabenstellung_Bilder/b1_US_Sensor_a.jpg){width="50%" fig-align="center"}
-
----
-
-
-![µController Vorderseite](Aufgabenstellung_Bilder/b3_Controller_Vorderseite.jpg){width="30%" fig-align=".left"}
-
-![µController Rückseite](Aufgabenstellung_Bilder/b2_Controller_R%C3%BCckseite.jpg){width="30%" fig-align=".right"}
 
 
 
