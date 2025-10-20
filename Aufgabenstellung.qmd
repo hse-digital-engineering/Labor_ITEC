@@ -26,13 +26,8 @@ Für die Entwicklung ist schon eine Hardware-Aufbau vorhanden. Diese bietet vers
 
 
 ![µController Vorderseite](Aufgabenstellung_Bilder/b3_Controller_Vorderseite.jpg){width="30%" fig-align="left"}
+![µController Rückseite](Aufgabenstellung_Bilder/b2_Controller_R%C3%BCckseite.jpg){width="30%" fig-align="right"}
 
----
-
-
-![µController Vorderseite](Aufgabenstellung_Bilder/b2_Controller_R%C3%BCckseite.jpg){width="30%" fig-align="right"}
-
----
 
 
 Die Blackbox ist ein Gehäuse in dem ein µ Controller Signale von einem Ultraschall Sensor (US-Sensor) erfasst diese verarbeitet und über die USB Schnittstelle ausgibt.
@@ -40,19 +35,8 @@ Die gesendeten Daten sind im INT Format und werden mit einer Frequenz von 1Hz au
 Die Spannungsversorgung erfolgt auch über den USB Anschluss (5V/0,500mA).
 
 
-[//]:<> (TODO: Beschreibung der Ansteuerung (Win und Linux))
+(TODO: Beschreibung der Ansteuerung (Win und Linux))
 
-
-
-
-
-
-*********************************************************************************************************
-[//]:<> (
-
----
-
-Hier ist eine grundlegende Anleitung, wie du in C unter Windows Daten von einem USB-Port auslesen und speichern kannst. Dabei gehen wir davon aus, dass es sich um ein USB-Gerät handelt, das sich als serielles Gerät (z. B. ein USB-zu-Seriell-Konverter wie ein Arduino oder ähnliches) am System anmeldet – das ist der gängigste und einfachste Fall.
 
 ---
 
