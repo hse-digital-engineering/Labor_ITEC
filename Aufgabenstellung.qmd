@@ -265,7 +265,7 @@ Ziel:
 
 ---
 
-- Der Modus kann über die CLI ausgewählt werden (Einzelmessung, Kalibirierung)
+- Der Modus kann über die Command Line Interface (CLI) ausgewählt werden (Einzelmessung, Kalibirierung)
 - Anhand der händisch erstellten Tabelle und in den Werten aus der Spalte Abweichung eine Look-Up Tabelle programieren, die als Input die aufgenommene csv-Datei hat. So ist es möglich durch den Tausch der csv-Datei einen anderen Wertebereich festzulegen.
 - Zwischen den Datenpunkten aus der Look-Up Tabelle soll linear interpoliert werden, um aus dem Sensorwert den korrekten Abstand zu berechnen.
 - Die Visualisierung der Soll-Ist-Abweichung soll in Excel durch den Import der csv-Datei erfolgen.
