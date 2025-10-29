@@ -1,6 +1,6 @@
 # Laboraufgabe.
 
-Es soll eine Höhenmesser entwicklet werden, der ein Höhenprofil aufnehmen kann. Dazu wird in diesem Labor die Informatik-Komponente entwickelt.
+Es soll eine Höhenmesser entwicklet werden, der ein Höhenprofil aufnehmen kann. Dazu wird in diesem Labor die Informatik - Komponente entwickelt.
 
 
 ---
@@ -13,14 +13,7 @@ Für die Entwicklung ist schon eine Hardware-Aufbau vorhanden. Diese bietet vers
 
 ## Beschreibung Hardware-Blackbox:
 
-<!--
-![KI stellt diverse Herausforderungen an eine Datenstrategie[^fn6]](https://www.ihk-muenchen.de/ihk/Digitalisierung/KI-Webinarreihe-2020/Webinar-5-Datenstrategie.pdf){#fig-ki-herausf fig-align="center" width="80%"}
-
-[^fn6]: [@Dr.HendrikBrakemeier.2020]
--->
-
-:::{.panel-tabset}
-
+:::{.panel-tabset} 
 
 
 ::: {#fig-zwei-bilder layout-ncol="3"}
@@ -36,26 +29,13 @@ Komponenten der Black-Box.
 
 ---
 
-
-
 Die Blackbox ist ein Gehäuse in dem ein µ Controller Signale von einem Ultraschall Sensor (US-Sensor) erfasst diese verarbeitet und über die USB Schnittstelle ausgibt.
-Die gesendeten Daten sind im INT Format und werden mit einer Frequenz von 1Hz ausgegeben
+Die gesendeten Daten sind im INT (Integer) Format und werden mit einer Frequenz von 1Hz ausgegeben
 Die Spannungsversorgung erfolgt auch über den USB Anschluss (5V/0,500mA).
-
-
-(TODO: Beschreibung der Ansteuerung (Win und Linux))
-
 
 ---
 
 ##  Auslesen der empfangenen Daten im Windows Betriebs-System 
-
-1. **Serielle Port Schnittstelle definieren.(USB = Universal Serial Bus.)**
-
-   * Überprüfe das in der Windows-Geräteverwaltung unter „Anschlüsse (COM & LPT)“.
-   * Beispiel: *"USB Serial Port (COM5)"*
-
-2. **Du benötigst ein C-Compiler-Toolset**,  z.B. Visual Studio 
 
 ---
 
@@ -63,7 +43,7 @@ Die Spannungsversorgung erfolgt auch über den USB Anschluss (5V/0,500mA).
 
 ### 1. COM-Port herausfinden
 
-Öffne den Geräte-Manager und suche unter **"Anschlüsse (COM & LPT)"** nach deinem Gerät, z. B. **COM5**.
+Öffne den Windows Geräte-Manager und suche unter **"Anschlüsse (COM & LPT)"** nach der angeschlossenen Black Box, z. B. *"Silicon Labs CP210x USB to UART Bridge Port (COM5)"*.
 
 ---
 
